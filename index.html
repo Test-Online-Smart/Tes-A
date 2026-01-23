@@ -3,26 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tes-A</title>
-    <link rel="icon" type="image/png" href="mathematic.png">
-    <link rel="apple-touch-icon" href="favicon.png">
-    
+    <title>Psikotes Online</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-        iframe {
-            border: none;
+        :root {
+            --bg: #e0e5ec;
+            --shadow-light: #ffffff;
+            --shadow-dark: #a3b1c6;
+            --text: #4a5568;
+            --blue: #3182ce;
+        }
+
+        body {
+            background-color: var(--bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            color: var(--text);
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px 20px;
             width: 100%;
-            height: 100vh; /* Mengisi seluruh layar */
+            max-width: 500px;
+        }
+
+        .header-card {
+            padding: 30px;
+            border-radius: 30px;
+            background: var(--bg);
+            box-shadow: 10px 10px 20px var(--shadow-dark), -10px -10px 20px var(--shadow-light);
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .menu-card {
+            padding: 30px 20px;
+            border-radius: 25px;
+            background: var(--bg);
+            box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .menu-card:active {
+            box-shadow: inset 5px 5px 10px var(--shadow-dark), inset -5px -5px 10px var(--shadow-light);
+            transform: scale(0.98);
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .title-tes {
+            color: var(--blue);
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
-<iframe 
-    src="https://script.google.com/macros/s/AKfycbwQB7LF23x_7OTHHRFuGdwYtaBoRKm6ADUOwEppqs22YFqNtFfl058Jvbmex_qwpjxt/exec" 
-    style="border: none; width: 100%; height: 100vh;" 
-    allow="fullscreen" 
-    allowfullscreen="true">
-</iframe>
-     
+
+    <div class="container">
+        <div class="header-card">
+            <h1 style="margin: 0; font-size: 24px;">Selamat Datang</h1>
+            <p style="margin-top: 10px; font-size: 14px;">Silakan pilih kategori tes yang tersedia di bawah ini:</p>
+        </div>
+
+        <div class="grid">
+            <a href="./A/" class="menu-card">
+                <div class="icon">📝</div>
+                <div class="title-tes">TES A</div>
+            </a>
+
+            <a href="./B/" class="menu-card">
+                <div class="icon">📊</div>
+                <div class="title-tes">TES B</div>
+            </a>
+              <a href="./B/" class="menu-card">
+                <div class="icon">📋</div>
+                <div class="title-tes">TES C</div>
+            </a>
+        </div>
+
+        <p style="margin-top: 50px; font-size: 12px; opacity: 0.7;">&copy; 2026 tes-online.web.id</p>
+    </div>
+
 </body>
 </html>
