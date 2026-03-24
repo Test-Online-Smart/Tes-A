@@ -6,23 +6,25 @@
     <title>Tes-C</title>
     <link rel="icon" type="image/png" href="Tes-C.png">
     <link rel="apple-touch-icon" href="Tes-C.png">
-    
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-        iframe {
-            border: none;
-            width: 100%;
-            height: 100vh; /* Mengisi seluruh layar */
-        }
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #e0e5ec; }
+        iframe { border: none; width: 100%; height: 100%; }
     </style>
 </head>
 <body>
-<iframe 
-    src="https://script.google.com/macros/s/AKfycbxF89XkCCNyXDv5jHbNZDIcpUOwkrERpekPGvOlPzHP09Y_cSgPOgkRRk0m-bsNktuTyw/exec" 
-    style="border: none; width: 100%; height: 100vh;" 
-    allow="fullscreen" 
-    allowfullscreen="true">
-</iframe>
-     
+
+    <iframe id="gas-iframe" src=""></iframe>
+
+    <script>
+        // 1. MASUKKAN URL WEB APP GOOGLE APPS SCRIPT TES C ANDA DI SINI
+        const webAppUrl = "https://script.google.com/macros/s/AKfycbxF89XkCCNyXDv5jHbNZDIcpUOwkrERpekPGvOlPzHP09Y_cSgPOgkRRk0m-bsNktuTyw/exec"; 
+        
+        // 2. Tangkap parameter (?token=...) dari URL tes-online.web.id/C/
+        const queryString = window.location.search;
+        
+        // 3. Gabungkan URL GAS dengan parameter, lalu masukkan ke iframe
+        document.getElementById('gas-iframe').src = webAppUrl + queryString;
+    </script>
+
 </body>
 </html>
