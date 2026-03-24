@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tes-D </title>
+    <title>Tes-D</title>
     <link rel="icon" type="image/png" href="Tes-D.png">
     <link rel="apple-touch-icon" href="Tes-D.png">
-    
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-        iframe {
-            border: none;
-            width: 100%;
-            height: 100vh; /* Mengisi seluruh layar */
-        }
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #e0e5ec; }
+        iframe { border: none; width: 100%; height: 100%; }
     </style>
 </head>
 <body>
-<iframe 
-    src="https://script.google.com/macros/s/AKfycbzq2k0HNubeE0Zva6cWcpf-biy-Gim1lguT8POFbCa-Oc7girpMvQZYH5yvAgjK5ljJ/exec" 
-    style="border: none; width: 100%; height: 100vh;" 
-    allow="fullscreen" 
-    allowfullscreen="true">
-</iframe>
-     
+
+    <iframe id="gas-iframe" src=""></iframe>
+
+    <script>
+        // 1. MASUKKAN URL WEB APP GOOGLE APPS SCRIPT TES D ANDA DI SINI
+        const webAppUrl = "https://script.google.com/macros/s/AKfycbzq2k0HNubeE0Zva6cWcpf-biy-Gim1lguT8POFbCa-Oc7girpMvQZYH5yvAgjK5ljJ/exec"; 
+        
+        // 2. Tangkap parameter (?token=...) dari URL tes-online.web.id/D/
+        const queryString = window.location.search;
+        
+        // 3. Gabungkan URL GAS dengan parameter, lalu masukkan ke iframe
+        document.getElementById('gas-iframe').src = webAppUrl + queryString;
+    </script>
+
 </body>
 </html>
